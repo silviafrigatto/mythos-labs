@@ -1,7 +1,3 @@
-def describe_project(title, author):
-    return f"Project '{title}' was created by {author}"
-
-sentence = []
 projects = []
 app_running = True
 
@@ -15,12 +11,12 @@ while app_running:
             if not title_input or not author_input:
                 print("Error: 'Project title' and/or 'author' cannot be empty.")
                 continue
-            projects.append({"Title": title_input, "Author": author_input})
+            projects.append({"title": title_input, "author": author_input})
             quantity -= 1
         print("\nRegistered Projects:\n")
         for project in projects:
-            print(f"Title: {project['Title']}")
-            print(f"Author: {project['Author']}\n")
+            print(f"Title: {project['title']}")
+            print(f"Author: {project['author']}\n")
         app_running = False
     except ValueError:
         print("Error: Not an integer number.")
