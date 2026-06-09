@@ -1,3 +1,5 @@
+from project_services import create_project
+
 projects = []
 app_running = True
 
@@ -11,7 +13,8 @@ while app_running:
             if not title_input or not author_input:
                 print("Error: 'Project title' and/or 'author' cannot be empty.")
                 continue
-            projects.append({"title": title_input, "author": author_input})
+            project = create_project(title_input, author_input)
+            projects.append(project)
             quantity -= 1
         print("\nRegistered Projects:\n")
         for project in projects:
