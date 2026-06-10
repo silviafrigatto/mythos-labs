@@ -1,4 +1,4 @@
-from project_services import create_project
+from project_services import create_project, find_project_by_title
 
 projects = []
 app_running = True
@@ -20,6 +20,9 @@ while app_running:
         for project in projects:
             print(f"Title: {project['title']}")
             print(f"Author: {project['author']}\n")
+        title_find = input("Search project by title: ")
+        find = find_project_by_title(projects, title_find)
+        print(find)
         app_running = False
     except ValueError:
         print("Error: Not an integer number.")
