@@ -31,7 +31,7 @@ while True:
             print("\n=== Search project ===\n")
             title_search = input("Search project by title: ")
             title_search_result = find_project_by_title(projects, title_search)
-            if title_search_result == None:
+            if title_search_result is None:
                 print("Project not found.\n")
                 search = False
             else:
