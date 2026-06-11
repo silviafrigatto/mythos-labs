@@ -1,5 +1,5 @@
 def show_menu():
-    print("=== Mythos Labs ===\n")
+    print("\n=== MYTHOS LABS ===\n")
     print("1 - Register project")
     print("2 - Search project")
     print("3 - List project")
