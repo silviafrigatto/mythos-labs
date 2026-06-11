@@ -13,3 +13,7 @@ def create_project(title, author):
 
 def find_project_by_title(projects, title):
    return next((project for project in projects if project.get('title') == title), None) 
+
+def show_project_info(info):
+    print(f"Title: {info['title']}")
+    print(f"Author: {info['author']}\n")

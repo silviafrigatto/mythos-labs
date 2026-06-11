@@ -1,11 +1,11 @@
-from project_services import show_menu, create_project, find_project_by_title
+from project_services import show_menu, create_project, find_project_by_title, show_project_info
 
 projects = []
-search = True
     
 while True:
     show_menu()
     register = True
+    search = True
     choice = input("Enter your choice (1 - 4): ")
     if choice == "1":
         while register:
@@ -33,8 +33,10 @@ while True:
             title_search_result = find_project_by_title(projects, title_search)
             if title_search_result == None:
                 print("Project not found.\n")
+                search = False
             else:
-                print(title_search_result)
+                print("\nProject found:")
+                show_project_info(title_search_result)
                 search = False
     elif choice == "3":
         print("\n=== List projects ===\n")
@@ -43,9 +45,9 @@ while True:
         else:
             print("\nRegistered Projects:\n")
             for project in projects:
-                print(f"Title: {project['title']}")
-                print(f"Author: {project['author']}\n")
+                show_project_info(project)
     elif choice == "4":
+        print("\nGoodbye.")
         exit()
     else:
         print("\nERROR: Invalid selection. Please try again.\n")
