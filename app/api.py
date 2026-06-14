@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from project_services import find_project_by_title
+from app.project_services import find_project_by_title
 
 app = FastAPI()
 
@@ -14,9 +14,6 @@ projects = [
     }
 ]
 
-search = "Echoes of Ithaca"
-title = find_project_by_title(projects, search)
-
 @app.get("/")
 def home():
     return {"message": "Welcome to Mythos Labs"}
@@ -26,5 +23,5 @@ def get_projects():
     return projects
 
 @app.get("/projects/{title}")
-def get_projects(title:str):
-    return title
+def get_projects_by_title(title:str):
+    return find_project_by_title(projects, title)
