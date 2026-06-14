@@ -25,3 +25,4 @@ def test_show_project_info(capsys):
         "Title: Echoes of Ithaca\n"
         "Author: Helena\n\n"
     )
+
